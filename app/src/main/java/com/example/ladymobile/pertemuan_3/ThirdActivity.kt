@@ -20,7 +20,7 @@ class ThirdActivity : AppCompatActivity() {
         binding = ActivityThirdBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Menggunakan binding.root agar tidak mencari R.id.main secara manual
+
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -30,13 +30,13 @@ class ThirdActivity : AppCompatActivity() {
         binding.btnKirim.setOnClickListener {
             val intent = Intent(this, ThirdResultActivity::class.java)
             startActivity(intent)
-            // Menambahkan .trim() untuk menghapus spasi di awal/akhir input
+
             val noTujuan = binding.inputNoTujuan.text.toString().trim()
 
             if (noTujuan.isNotEmpty()) {
                 Toast.makeText(this, "Pesan berhasil dikirim ke $noTujuan", Toast.LENGTH_SHORT).show()
             } else {
-                // Memberikan error visual pada EditText selain pesan Toast
+
                 binding.inputNoTujuan.error = "Nomor tujuan tidak boleh kosong"
                 Toast.makeText(this, "Nomor tujuan tidak boleh kosong", Toast.LENGTH_SHORT).show()
             }
