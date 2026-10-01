@@ -5,14 +5,11 @@ plugins {
 android {
     namespace = "com.example.ladymobile"
 
-    // PERBAIKAN: Diubah ke 37 sesuai permintaan library androidx.core
     compileSdk = 37
 
     defaultConfig {
         applicationId = "com.example.ladymobile"
         minSdk = 29
-
-        // targetSdk bisa tetap di 35 atau 36 agar tidak merubah perilaku runtime
         targetSdk = 35
 
         versionCode = 1

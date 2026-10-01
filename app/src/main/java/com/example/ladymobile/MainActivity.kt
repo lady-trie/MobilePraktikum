@@ -8,16 +8,15 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.ladymobile.databinding.ActivityMainBinding
 import com.example.ladymobile.pertemuan_4.FourthActivity
+import com.example.ladymobile.pertemuan_5.FifthActivity
 
 class MainActivity : AppCompatActivity() {
-
 
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -28,16 +27,19 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        //Pertemuan 4
         binding.btnToFourth.setOnClickListener {
             val intent = Intent(this, FourthActivity::class.java)
-            startActivity(intent)
-
             intent.putExtra("name", "Politeknik Caltex Riau")
             intent.putExtra("from", "Rumbai")
             intent.putExtra("age", 25)
+            startActivity(intent)
+        }
 
-           // startActivity(intent)
-            finish()
+        // Pertemuan 5
+        binding.btnToFifth.setOnClickListener {
+            val intent = Intent(this, FifthActivity::class.java)
+            startActivity(intent)
         }
     }
 }
