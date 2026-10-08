@@ -6,19 +6,20 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.ladymobile.databinding.ActivityMainBinding
+import com.example.ladymobile.databinding.ActivityMainHubBinding
 import com.example.ladymobile.pertemuan_4.FourthActivity
 import com.example.ladymobile.pertemuan_5.FifthActivity
+import com.example.ladymobile.pertemuan_6.SplashScreenActivity
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainHubBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainHubBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        //Pertemuan 4
+        // Pertemuan 4
         binding.btnToFourth.setOnClickListener {
             val intent = Intent(this, FourthActivity::class.java)
             intent.putExtra("name", "Politeknik Caltex Riau")
@@ -39,6 +40,12 @@ class MainActivity : AppCompatActivity() {
         // Pertemuan 5
         binding.btnToFifth.setOnClickListener {
             val intent = Intent(this, FifthActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Pertemuan 6
+        binding.btnToSixth.setOnClickListener {
+            val intent = Intent(this, SplashScreenActivity::class.java)
             startActivity(intent)
         }
     }
