@@ -10,6 +10,7 @@ import com.example.ladymobile.databinding.ActivityMainHubBinding
 import com.example.ladymobile.pertemuan_4.FourthActivity
 import com.example.ladymobile.pertemuan_5.FifthActivity
 import com.example.ladymobile.pertemuan_6.SplashScreenActivity
+import com.example.ladymobile.pertemuan_7.Pertemuan7Activity
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         // Pertemuan 4
         binding.btnToFourth.setOnClickListener {
             val intent = Intent(this, FourthActivity::class.java)
-            intent.putExtra("name", "Politeknik Caltex Riau")
+            intent.putExtra("name", "Politeknik Caltex Rumbai")
             intent.putExtra("from", "Rumbai")
             intent.putExtra("age", 25)
             startActivity(intent)
@@ -46,6 +47,12 @@ class MainActivity : AppCompatActivity() {
         // Pertemuan 6
         binding.btnToSixth.setOnClickListener {
             val intent = Intent(this, SplashScreenActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Pertemuan 7
+        binding.btnToSeventh.setOnClickListener {
+            val intent = Intent(this, Pertemuan7Activity::class.java)
             startActivity(intent)
         }
     }
