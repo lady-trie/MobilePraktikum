@@ -5,7 +5,7 @@
     android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F3F0F7"
+    android:background="#FDF2F5"
     tools:context=".pertemuan_10.TenthActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -27,8 +27,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginBottom="24dp"
+            android:fontFamily="sans-serif-rounded"
             android:text="ListView, Components &amp; Form Polish"
-            android:textColor="#FFEB3B"
+            android:textColor="#FFF8E1"
             android:textSize="15sp"
             android:textStyle="bold" />
 
@@ -50,8 +51,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-rounded"
                 android:text="Form Input Material"
-                android:textColor="#4A148C"
+                android:textColor="#880E4F"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -68,12 +70,13 @@
                 app:errorEnabled="true"
                 app:helperText="Maksimal 50 karakter"
                 app:startIconDrawable="@drawable/ic_task"
-                app:startIconTint="#651FFF">
+                app:startIconTint="#E91E63">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editMessageText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-rounded"
                     android:inputType="text"
                     android:maxLength="50"
                     android:textColor="#212121" />
@@ -84,8 +87,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:backgroundTint="#651FFF"
-                android:text="Kirim Pesan 🚀"
+                android:backgroundTint="#E91E63"
+                android:fontFamily="sans-serif-rounded"
+                android:text="Kirim Pesan 💕"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 app:cornerRadius="12dp" />
@@ -95,8 +99,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-rounded"
                 android:text="Filter Kategori"
-                android:textColor="#4A148C"
+                android:textColor="#880E4F"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -114,9 +119,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
+                    android:fontFamily="sans-serif-rounded"
                     android:text="Semua Chat"
                     app:chipBackgroundColor="@color/white"
-                    app:chipStrokeColor="#651FFF"
+                    app:chipStrokeColor="#E91E63"
                     app:chipStrokeWidth="1dp" />
 
                 <com.google.android.material.chip.Chip
@@ -124,9 +130,10 @@
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Penting Banget"
+                    android:fontFamily="sans-serif-rounded"
+                    android:text="Penting"
                     app:chipBackgroundColor="@color/white"
-                    app:chipStrokeColor="#FF1744"
+                    app:chipStrokeColor="#C2185B"
                     app:chipStrokeWidth="1dp" />
 
                 <com.google.android.material.chip.Chip
@@ -134,9 +141,10 @@
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-rounded"
                     android:text="Belum Dibaca"
                     app:chipBackgroundColor="@color/white"
-                    app:chipStrokeColor="#00E676"
+                    app:chipStrokeColor="#FF4081"
                     app:chipStrokeWidth="1dp" />
             </com.google.android.material.chip.ChipGroup>
 
@@ -145,8 +153,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-rounded"
                 android:text="Action Grid"
-                android:textColor="#4A148C"
+                android:textColor="#880E4F"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -162,8 +171,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
-                    android:backgroundTint="#FF1744"
-                    android:text="Kirim P"
+                    android:backgroundTint="#E91E63"
+                    android:fontFamily="sans-serif-rounded"
+                    android:text="Aksi 1"
                     android:textColor="@color/white"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -176,8 +186,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
-                    android:backgroundTint="#D500F9"
-                    android:text="Spam Text"
+                    android:backgroundTint="#F06292"
+                    android:fontFamily="sans-serif-rounded"
+                    android:text="Aksi 2"
                     android:textColor="@color/white"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -190,8 +201,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
-                    android:backgroundTint="#651FFF"
-                    android:text="Clear Chat"
+                    android:backgroundTint="#C2185B"
+                    android:fontFamily="sans-serif-rounded"
+                    android:text="Aksi 3"
                     android:textColor="@color/white"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -204,8 +216,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
-                    android:backgroundTint="#00B0FF"
-                    android:text="Sticker"
+                    android:backgroundTint="#FF4081"
+                    android:fontFamily="sans-serif-rounded"
+                    android:text="Aksi 4"
                     android:textColor="@color/white"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -218,8 +231,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
-                    android:backgroundTint="#00C853"
-                    android:text="Voice Note"
+                    android:backgroundTint="#880E4F"
+                    android:fontFamily="sans-serif-rounded"
+                    android:text="Aksi 5"
                     android:textColor="@color/white"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -232,8 +246,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
-                    android:backgroundTint="#FF6D00"
-                    android:text="Cari Chat"
+                    android:backgroundTint="#AD1457"
+                    android:fontFamily="sans-serif-rounded"
+                    android:text="Aksi 6"
                     android:textColor="@color/white"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -247,8 +262,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Daftar Pesan Masuk"
-                android:textColor="#4A148C"
+                android:fontFamily="sans-serif-rounded"
+                android:text="Daftar Pesan (ListView)"
+                android:textColor="#880E4F"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 

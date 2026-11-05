@@ -3,7 +3,6 @@ package com.example.ladymobile.pertemuan_10
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.ladymobile.R
 import com.example.ladymobile.databinding.ActivityTenthBinding
 import com.google.android.material.chip.Chip
 import com.google.android.material.snackbar.Snackbar
@@ -14,20 +13,33 @@ class TenthActivity : AppCompatActivity() {
     private lateinit var messageAdapter: MessageAdapter
     private val allMessages = mutableListOf<MessageModel>()
 
+    private val messageList = listOf(
+        MessageModel("Alya", "Halo! Apa kabar?", "https://avatarapi.runflare.run/public/1"),
+        MessageModel("Budi", "Sudah makan?", "https://avatarapi.runflare.run/public/2"),
+        MessageModel("Citra", "Jangan lupa tugasnya ya!", "https://avatarapi.runflare.run/public/3"),
+        MessageModel("Dika", "Besok kita rapat jam 9", "https://avatarapi.runflare.run/public/4"),
+        MessageModel("Eka", "Nice job kemarin!", "https://avatarapi.runflare.run/public/5"),
+        MessageModel("Fajar", "Lagi ngapain?", "https://avatarapi.runflare.run/public/6"),
+        MessageModel("Gita", "Boleh minta tolong?", "https://avatarapi.runflare.run/public/7"),
+        MessageModel("Hana", "Lihat email ya", "https://avatarapi.runflare.run/public/8"),
+        MessageModel("Irfan", "Oke noted", "https://avatarapi.runflare.run/public/9"),
+        MessageModel("Joko", "Sampai jumpa besok", "https://avatarapi.runflare.run/public/10")
+    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTenthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Setup Toolbar Navigation
+        // Toolbar Navigation
         binding.toolbar.setNavigationOnClickListener {
             finish()
         }
 
-        // Initialize Dummy Data (Local Boy & Girl Avatars + Natural Messages)
-        initDummyData()
+        // Initialize Message List
+        allMessages.addAll(messageList)
 
-        // Setup MessageAdapter & ListView
+        // MessageAdapter Setup
         messageAdapter = MessageAdapter(this, allMessages)
         binding.listViewMessages.adapter = messageAdapter
 
@@ -41,12 +53,12 @@ class TenthActivity : AppCompatActivity() {
                 val newMessage = MessageModel(
                     senderName = "Saya",
                     messageText = text,
-                    avatarResId = R.drawable.ic_avatar_boy
+                    avatarUrl = "https://avatarapi.runflare.run/public/11"
                 )
                 allMessages.add(0, newMessage)
                 messageAdapter.notifyDataSetChanged()
                 binding.editMessageText.text?.clear()
-                Snackbar.make(binding.root, "Pesan terkirim! 🚀", Snackbar.LENGTH_SHORT).show()
+                Snackbar.make(binding.root, "Pesan terkirim! ✨", Snackbar.LENGTH_SHORT).show()
             }
         }
 
@@ -65,27 +77,10 @@ class TenthActivity : AppCompatActivity() {
             binding.btnGrid1, binding.btnGrid2, binding.btnGrid3,
             binding.btnGrid4, binding.btnGrid5, binding.btnGrid6
         )
-        gridButtons.forEachIndexed { index, button ->
+        gridButtons.forEach { button ->
             button.setOnClickListener {
                 Toast.makeText(this, "Aksi: ${button.text}", Toast.LENGTH_SHORT).show()
             }
         }
-    }
-
-    private fun initDummyData() {
-        allMessages.addAll(
-            listOf(
-                MessageModel("Budi", "P, tugas p10 udah selese belom bro?", R.drawable.ic_avatar_boy),
-                MessageModel("Siti", "Nanti kumpul kantin ya abis kelas!", R.drawable.ic_avatar_girl),
-                MessageModel("Rian", "Minjem catetan kemarin dnk pliss", R.drawable.ic_avatar_boy),
-                MessageModel("Nabila", "Info dosen udah masuk room zoom belom?", R.drawable.ic_avatar_girl),
-                MessageModel("Fauzi", "Gasss nugas bareng di perpus jam 3", R.drawable.ic_avatar_boy),
-                MessageModel("Dewi", "Woi laporan kelompok siapa yg pegang?", R.drawable.ic_avatar_girl),
-                MessageModel("Eko", "Gas kan mabar bentar habis maghrib", R.drawable.ic_avatar_boy),
-                MessageModel("Fitri", "Ada yg ngerti bagian gridlayout ga?", R.drawable.ic_avatar_girl),
-                MessageModel("Gilang", "Santuy besok kan masih tenggat jam 12 malem", R.drawable.ic_avatar_boy),
-                MessageModel("Indah", "Makasih ya gengs buat bantuan tadi!", R.drawable.ic_avatar_girl)
-            )
-        )
     }
 }
