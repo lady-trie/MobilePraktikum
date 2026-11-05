@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E0F7FA"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="32dp">
+
+    <ImageView
+        android:id="@+id/imgTutorial1"
+        android:layout_width="114dp"
+        android:layout_height="107dp"
+        android:contentDescription="Tutorial Icon 1"
+        android:src="@drawable/ic_washtrack_logo"
+        app:tint="#00838F" />
+
+    <TextView
+        android:id="@+id/tvTitleTutorial1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Fitur Pesan"
+        android:textColor="#006064"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvDescTutorial1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="Kirim dan terima pesan secara real-time dengan cepat dan mudah."
+        android:textColor="#00838F"
+        android:textSize="14sp" />
+
+</LinearLayout>

@@ -1,17 +1,15 @@
 package com.example.ladymobile
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
 import com.example.ladymobile.databinding.ActivityMainHubBinding
-import com.example.ladymobile.pertemuan_4.FourthActivity
-import com.example.ladymobile.pertemuan_5.FifthActivity
-import com.example.ladymobile.pertemuan_6.SplashScreenActivity
-import com.example.ladymobile.pertemuan_7.Pertemuan7Activity
-import com.example.ladymobile.pertemuan_10.TenthActivity
+import com.example.ladymobile.home.FragmentHome
+import com.example.ladymobile.home.MoreFragment
+import com.example.ladymobile.message.MessageFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,37 +28,32 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        // Pertemuan 4
-        binding.btnToFourth.setOnClickListener {
-            val intent = Intent(this, FourthActivity::class.java)
-            intent.putExtra("name", "Politeknik Caltex Rumbai")
-            intent.putExtra("from", "Rumbai")
-            intent.putExtra("age", 25)
-            startActivity(intent)
+        if (savedInstanceState == null) {
+            replaceFragment(FragmentHome())
         }
 
-        // Pertemuan 5
-        binding.btnToFifth.setOnClickListener {
-            val intent = Intent(this, FifthActivity::class.java)
-            startActivity(intent)
+        binding.bottomNavView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navigation_home -> {
+                    replaceFragment(FragmentHome())
+                    true
+                }
+                R.id.navigation_message -> {
+                    replaceFragment(MessageFragment())
+                    true
+                }
+                R.id.navigation_more -> {
+                    replaceFragment(MoreFragment())
+                    true
+                }
+                else -> false
+            }
         }
+    }
 
-        // Pertemuan 6
-        binding.btnToSixth.setOnClickListener {
-            val intent = Intent(this, SplashScreenActivity::class.java)
-            startActivity(intent)
-        }
-
-        // Pertemuan 7
-        binding.btnToSeventh.setOnClickListener {
-            val intent = Intent(this, Pertemuan7Activity::class.java)
-            startActivity(intent)
-        }
-
-        // Pertemuan 10
-        binding.btnToTenth.setOnClickListener {
-            val intent = Intent(this, TenthActivity::class.java)
-            startActivity(intent)
-        }
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .commit()
     }
 }

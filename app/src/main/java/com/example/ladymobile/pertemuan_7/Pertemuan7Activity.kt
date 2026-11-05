@@ -8,6 +8,9 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.example.ladymobile.R
 import com.example.ladymobile.databinding.ActivityPertemuan7Binding
+import com.example.ladymobile.home.FragmentHome
+import com.example.ladymobile.home.MoreFragment
+import com.example.ladymobile.message.MessageFragment
 
 class Pertemuan7Activity : AppCompatActivity() {
 
@@ -27,21 +30,21 @@ class Pertemuan7Activity : AppCompatActivity() {
         }
 
         if (savedInstanceState == null) {
-            replaceFragment(P7HomeFragment())
+            replaceFragment(FragmentHome())
         }
 
         binding.bottomNavView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.navigation_home -> {
-                    replaceFragment(P7HomeFragment())
+                    replaceFragment(FragmentHome())
                     true
                 }
-                R.id.navigation_task -> {
-                    replaceFragment(P7TaskFragment())
+                R.id.navigation_message -> {
+                    replaceFragment(MessageFragment())
                     true
                 }
-                R.id.navigation_profile -> {
-                    replaceFragment(P7ProfileFragment())
+                R.id.navigation_more -> {
+                    replaceFragment(MoreFragment())
                     true
                 }
                 else -> false

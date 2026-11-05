@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8F5E9"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="32dp">
+
+    <ImageView
+        android:id="@+id/imgTutorial3"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_task"
+        app:tint="#2E7D32"
+        android:contentDescription="Tutorial Icon 3" />
+
+    <TextView
+        android:id="@+id/tvTitleTutorial3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Kemudahan Berbagi"
+        android:textColor="#1B5E20"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvDescTutorial3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="Bagikan info produk dan status pesanan langsung melalui obrolan."
+        android:textColor="#2E7D32"
+        android:textSize="14sp" />
+
+</LinearLayout>

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.ladymobile.databinding.FragmentP7HomeBinding
+import com.example.ladymobile.pertemuan_11.EleventhActivity
 
 class P7HomeFragment : Fragment() {
 
@@ -27,6 +28,11 @@ class P7HomeFragment : Fragment() {
 
         binding.btnHomeAction.setOnClickListener {
             Toast.makeText(requireContext(), "Aksi dari Home Fragment!", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.btnToEleventh.setOnClickListener {
+            val intent = android.content.Intent(requireContext(), EleventhActivity::class.java)
+            startActivity(intent)
         }
     }
 

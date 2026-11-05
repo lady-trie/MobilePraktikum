@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/tvHomeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pemrograman Mobile"
+            android:textColor="#E91E63"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="140dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="Reading"
+            app:srcCompat="@drawable/reading" />
+
+        <Button
+            android:id="@+id/btnToFourth"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#FFC107"
+            android:text="Pertemuan 4" />
+
+        <Button
+            android:id="@+id/btnToFifth"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#36C3B7"
+            android:text="Pertemuan 5" />
+
+        <Button
+            android:id="@+id/btnToSixth"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#00BCD4"
+            android:text="Pertemuan 6" />
+
+        <Button
+            android:id="@+id/btnToSeventh"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#9C27B0"
+            android:text="Pertemuan 7" />
+
+        <Button
+            android:id="@+id/btnToTenth"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#3F51B5"
+            android:text="Pertemuan 10" />
+
+        <Button
+            android:id="@+id/btnToEleventh"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#673AB7"
+            android:text="Pertemuan 11"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+</ScrollView>
