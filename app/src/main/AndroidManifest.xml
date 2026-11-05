@@ -77,6 +77,12 @@
             android:name=".pertemuan_7.Pertemuan7Activity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <!-- Pertemuan 10 Activity -->
+        <activity
+            android:name=".pertemuan_10.TenthActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

@@ -11,6 +11,7 @@ import com.example.ladymobile.pertemuan_4.FourthActivity
 import com.example.ladymobile.pertemuan_5.FifthActivity
 import com.example.ladymobile.pertemuan_6.SplashScreenActivity
 import com.example.ladymobile.pertemuan_7.Pertemuan7Activity
+import com.example.ladymobile.pertemuan_10.TenthActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -53,6 +54,12 @@ class MainActivity : AppCompatActivity() {
         // Pertemuan 7
         binding.btnToSeventh.setOnClickListener {
             val intent = Intent(this, Pertemuan7Activity::class.java)
+            startActivity(intent)
+        }
+
+        // Pertemuan 10
+        binding.btnToTenth.setOnClickListener {
+            val intent = Intent(this, TenthActivity::class.java)
             startActivity(intent)
         }
     }
