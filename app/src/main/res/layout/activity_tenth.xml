@@ -5,7 +5,7 @@
     android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F7"
+    android:background="#F3F0F7"
     tools:context=".pertemuan_10.TenthActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -28,8 +28,9 @@
             android:layout_marginStart="16dp"
             android:layout_marginBottom="24dp"
             android:text="ListView, Components &amp; Form Polish"
-            android:textColor="#E0E0E0"
-            android:textSize="14sp" />
+            android:textColor="#FFEB3B"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -50,7 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Form Input Material"
-                android:textColor="#333333"
+                android:textColor="#4A148C"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -61,19 +62,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/edit_text_background"
-                android:hint="Tulis pesan Anda"
+                android:hint="Tulis pesan Anda..."
                 app:counterEnabled="true"
                 app:counterMaxLength="50"
                 app:errorEnabled="true"
                 app:helperText="Maksimal 50 karakter"
-                app:startIconDrawable="@drawable/ic_task">
+                app:startIconDrawable="@drawable/ic_task"
+                app:startIconTint="#651FFF">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editMessageText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-                    android:maxLength="50" />
+                    android:maxLength="50"
+                    android:textColor="#212121" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
@@ -81,9 +84,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:backgroundTint="#3F51B5"
-                android:text="Kirim Pesan"
-                app:cornerRadius="8dp" />
+                android:backgroundTint="#651FFF"
+                android:text="Kirim Pesan 🚀"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:cornerRadius="12dp" />
 
             <!-- Section 2: Chip Group Filter -->
             <TextView
@@ -91,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Filter Kategori"
-                android:textColor="#333333"
+                android:textColor="#4A148C"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -109,21 +114,30 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="Semua" />
+                    android:text="Semua Chat"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipStrokeColor="#651FFF"
+                    app:chipStrokeWidth="1dp" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipPenting"
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Penting" />
+                    android:text="Penting Banget"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipStrokeColor="#FF1744"
+                    app:chipStrokeWidth="1dp" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipBelumDibaca"
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Belum Dibaca" />
+                    android:text="Belum Dibaca"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipStrokeColor="#00E676"
+                    app:chipStrokeWidth="1dp" />
             </com.google.android.material.chip.ChipGroup>
 
             <!-- Section 3: Responsive GridLayout -->
@@ -132,7 +146,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Action Grid"
-                android:textColor="#333333"
+                android:textColor="#4A148C"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -145,61 +159,85 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnGrid1"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
-                    android:text="Aksi 1"
+                    android:backgroundTint="#FF1744"
+                    android:text="Kirim P"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="10dp"
                     app:layout_columnWeight="1"
                     app:layout_gravity="fill_horizontal" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnGrid2"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
-                    android:text="Aksi 2"
+                    android:backgroundTint="#D500F9"
+                    android:text="Spam Text"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="10dp"
                     app:layout_columnWeight="1"
                     app:layout_gravity="fill_horizontal" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnGrid3"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
-                    android:text="Aksi 3"
+                    android:backgroundTint="#651FFF"
+                    android:text="Clear Chat"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="10dp"
                     app:layout_columnWeight="1"
                     app:layout_gravity="fill_horizontal" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnGrid4"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
-                    android:text="Aksi 4"
+                    android:backgroundTint="#00B0FF"
+                    android:text="Sticker"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="10dp"
                     app:layout_columnWeight="1"
                     app:layout_gravity="fill_horizontal" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnGrid5"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
-                    android:text="Aksi 5"
+                    android:backgroundTint="#00C853"
+                    android:text="Voice Note"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="10dp"
                     app:layout_columnWeight="1"
                     app:layout_gravity="fill_horizontal" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnGrid6"
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
-                    android:text="Aksi 6"
+                    android:backgroundTint="#FF6D00"
+                    android:text="Cari Chat"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="10dp"
                     app:layout_columnWeight="1"
                     app:layout_gravity="fill_horizontal" />
             </androidx.gridlayout.widget.GridLayout>
@@ -209,15 +247,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Daftar Pesan (ListView)"
-                android:textColor="#333333"
+                android:text="Daftar Pesan Masuk"
+                android:textColor="#4A148C"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <ListView
                 android:id="@+id/listViewMessages"
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="450dp"
                 android:layout_marginTop="8dp"
                 android:divider="@null"
                 android:dividerHeight="0dp"

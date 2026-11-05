@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import com.bumptech.glide.Glide
-import com.example.ladymobile.R
 import com.example.ladymobile.databinding.ItemMessageBinding
 import com.google.android.material.snackbar.Snackbar
 
@@ -28,16 +27,14 @@ class MessageAdapter(
             binding.textMessage.text = item.messageText
 
             Glide.with(context)
-                .load(item.avatarUrl)
-                .placeholder(R.drawable.ic_profile)
-                .error(R.drawable.ic_profile)
+                .load(item.avatarResId)
                 .circleCrop()
                 .into(binding.avatarImg)
 
             binding.root.setOnClickListener { view ->
                 Snackbar.make(
                     view,
-                    "Pesan dari ${item.senderName}: ${item.messageText}",
+                    "${item.senderName}: ${item.messageText}",
                     Snackbar.LENGTH_SHORT
                 ).show()
             }
