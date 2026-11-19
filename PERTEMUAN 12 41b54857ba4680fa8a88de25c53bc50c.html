@@ -1,0 +1,1066 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>PERTEMUAN 12</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+	/* Paint a complete callout box on every PDF page fragment. */
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
+}
+
+/* For default-background callouts, render the border outline. */
+.callout.block-color-default_background {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+/*
+ * Toggles and callouts hold arbitrary content, so they can easily be taller
+ * than a page. They must stay breakable: avoiding breaks inside them makes
+ * Chromium push the whole block onto the next page, which leaves the previous
+ * page mostly empty before every long toggle.
+ */
+details,
+aside {
+	margin: 1.25em 0;
+}
+
+/* Keep a toggle's title on the same page as the start of its content. */
+summary {
+	page-break-after: avoid;
+	break-after: avoid;
+}
+
+/*
+ * Toggle headings render as <h1/h2/h3 style="display:inline-block"> inside
+ * <summary>. Without this reset, the heading's margin-top pushes it below the
+ * ::marker (▼), so the triangle and the title appear on separate lines.
+ */
+summary h1,
+summary h2,
+summary h3,
+summary h4 {
+	margin-top: 0;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding-inline: 0.125rem;
+	padding-block: 0.375rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+/*
+ * Render emoji icons using a ::before pseudo-element to keep the glyph
+ * out of the DOM textContent traversal. This avoids double-rendering icons
+ * in callouts and page titles.
+ * NOTE(slim/html-export-pseudo-icons): I can't tagref this because it will
+ * flag as a duplicate tag after codegen.
+ */
+.icon[data-emoji]::before {
+	content: attr(data-emoji);
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	margin-right: 0.4em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.tab {
+	margin: 1.25em 0;
+	padding-inline: 1rem;
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style><style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style></head><body><article id="41b54857-ba46-80fa-8a88-de25c53bc50c" class="page sans"><header><h1 class="page-title" dir="auto">PERTEMUAN 12</h1><p class="page-description" dir="auto"></p><table class="properties"><tbody></tbody></table></header><div class="page-body"><details open="" class="" dir="auto"><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0"><h1 id="41b54857-ba46-80e8-a789-d8d5ba875c27" style="display:inline-block">📂 REST API</h1></summary><div class="indented"><figure id="41b54857-ba46-8034-9a63-fff5314b73e9" class="image" data-notion-image="image.png" dir="ltr"><a href="image.png"><img style="width:681.9866333007812px" src="image.png"/></a></figure><h3 id="41b54857-ba46-8058-bdee-ca4dc37223e1" class="block-color-gray_background" data-notion-highlight="gray_background" dir="auto">Apa itu REST API?</h3><p id="41b54857-ba46-8040-af7e-f38c429dbc55" class="" dir="auto"><strong>REST A</strong><mark class="highlight-default_background" data-notion-highlight="default_background"><strong>PI</strong></mark><mark class="highlight-default_background" data-notion-highlight="default_background"> </mark><em><mark class="highlight-default_background" data-notion-highlight="default_background">(Representational State Transfer Application Programming Interface)</mark></em><mark class="highlight-default_background" data-notion-highlight="default_background"> adalah suatu cara agar aplikasi bisa </mark><mark class="highlight-default_background" data-notion-highlight="default_background"><strong>berkomunikasi</strong></mark><mark class="highlight-default_background" data-notion-highlight="default_background"> dan </mark><mark class="highlight-default_background" data-notion-highlight="default_background"><strong>bertukar data</strong></mark><mark class="highlight-default_background" data-notion-highlight="default_background"> melalui internet dalam format </mark><mark class="highlight-default_background" data-notion-highlight="default_background"><strong>JSON</strong></mark><mark class="highlight-default_background" data-notion-highlight="default_background">.</mark></p><p id="41b54857-ba46-8023-a878-d8c67d13d8c7" class="" dir="auto">Dalam imlementasi, akan ada REST Clients sebagai aplikasi/sistem yang membutuhkan data dan REST Server sebagai penyedia data.</p><h3 id="41b54857-ba46-80f1-a197-e13371a825a9" class="block-color-gray_background" data-notion-highlight="gray_background" dir="auto">Komponen Utama REST API</h3><details id="41b54857-ba46-807f-be2a-c359673d527d" open="" class="toggle" dir="auto"><summary><strong>Resource (Data)</strong></summary><div class="indented"><ul id="41b54857-ba46-8092-b88c-dda090a08b5e" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Segala sesuatu yang bisa diakses: contoh <code>users</code>, <code>posts</code>, <code>products</code>, <code>video</code>, <code>image</code></li></ul><ul id="41b54857-ba46-80ba-a8ac-c0311cca714f" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Biasanya diakses lewat URL / Endpoint seperti: <code>https://api.example.com/users/1</code></li></ul></div></details><details id="41b54857-ba46-8071-833d-c90acfb146b8" open="" class="toggle" dir="auto"><summary><strong>HTTP Method (Aksi)</strong></summary><div class="indented"><p id="41b54857-ba46-80c6-abb4-c7ead228c421" class="" dir="auto">Digunakan untuk menentukan aksi terhadap data:</p><ul id="41b54857-ba46-80a4-b4c1-e24a58b36cf1" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><code>GET</code> → ambil data</li></ul><ul id="41b54857-ba46-80f0-9b71-d50e5e5a4ad6" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><code>POST</code> → kirim data baru</li></ul><ul id="41b54857-ba46-80d3-b260-fc9135e0689b" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><code>PUT</code> → update data</li></ul><ul id="41b54857-ba46-80a2-a406-cf7f6a179209" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><code>DELETE</code> → hapus data</li></ul></div></details><details id="41b54857-ba46-80ca-9138-db5c951f70df" open="" class="toggle" dir="auto"><summary><strong>Request &amp; Response</strong></summary><div class="indented"><ul id="41b54857-ba46-807b-b1ee-c23a28baee1d" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><em>Request</em> dikirim oleh aplikasi (klien) ke server.</li></ul><ul id="41b54857-ba46-80a9-ad0f-d872dee279bb" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><em>Response</em> adalah jawaban dari server, biasanya dalam bentuk <strong>JSON</strong>.</li></ul></div></details><details id="41b54857-ba46-809e-83e6-c8483d679dbf" open="" class="toggle" dir="auto"><summary><strong>Headers dan Body</strong></summary><div class="indented"><ul id="41b54857-ba46-80d4-befc-eb04a740a4ff" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><em>Headers</em> berisi info tambahan (misal format data atau token).</li></ul><ul id="41b54857-ba46-80de-b872-dc82cbbaca91" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><em>Body</em> berisi isi data (khusus untuk <code>POST</code> atau <code>PUT</code>).</li></ul></div></details><h3 id="41b54857-ba46-80d0-a225-f5c56a2e9f38" class="block-color-gray_background" data-notion-highlight="gray_background" dir="auto">Hubungannya dengan Android?</h3><p id="41b54857-ba46-808b-9869-e818bbbe877e" class="" dir="auto">Android, secara umum akan bertindak sebagai REST Client yang akan <strong>mengambil data (GET) atau mengirim data (POST/PUT/PATCH/DELETE) ke server</strong>, seperti:</p><ul id="41b54857-ba46-8004-8641-ce1358b3b9d8" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Menampilkan daftar berita dari internet</li></ul><ul id="41b54857-ba46-805f-9118-da40adf1f6eb" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Mengirim data pendaftaran pengguna</li></ul><ul id="41b54857-ba46-805a-8875-f94210980d30" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Menyimpan catatan ke server</li></ul><p id="41b54857-ba46-806c-b535-d451b6426935" class="" dir="auto">Untuk melakukan hal tersebut, Android butuh <strong>mengakses REST API </strong>yang disediakan oleh server. Salah satu package yang dapat melakukan hal tersebut ialah <mark class="highlight-teal_background" data-notion-highlight="teal_background">Retrofit.</mark></p></div></details><hr id="41b54857-ba46-80ec-a21c-fdf3ae2dd31e" dir="auto"/><details open="" class="" dir="auto"><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0"><h1 id="41b54857-ba46-8006-b8e4-ece941a1b1c5" style="display:inline-block">📂 Backend As A Service (Baas)</h1></summary><div class="indented"><p id="41b54857-ba46-801d-8cb5-faef5da3f1c2" class="" dir="auto"><strong>BaaS</strong> merupakan suatu layanan yang menyediakan bagian backend dari aplikasi seperti <code>database</code>, <code>autentikasi</code>, dan <code>file_storage</code> tanpa harus membuat semuanya dari awal. </p><p id="41b54857-ba46-808a-bacf-dd42e83aec98" class="" dir="auto">BaaS sangat cocok untuk developer yang hanya ingin fokus di bagian frontend tanpa harus memikirkan bagian backend.</p><figure id="41b54857-ba46-8089-a5f7-eb6023ff8977" class="image" data-notion-image="image%201.png" dir="ltr"><a href="image%201.png"><img style="width:480px" src="image%201.png"/></a><figcaption><a href="https://www.cloudflare.com/fr-fr/learning/serverless/glossary/backend-as-a-service-baas/">https://www.cloudflare.com/fr-fr/learning/serverless/glossary/backend-as-a-service-baas/</a></figcaption></figure><p id="41b54857-ba46-8055-a306-fc8b0a769e1a" class="" dir="auto">Salah satu Baas yang akan kita bahas ialah <a href="https://supabase.com/">https://supabase.com/</a></p><figure id="41b54857-ba46-8082-aca1-ec39248ab43d" class="image" data-notion-image="image%202.png" dir="ltr"><a href="image%202.png"><img style="width:709.9609375px" src="image%202.png"/></a></figure><p id="41b54857-ba46-80e3-97f1-cf36e1c20d9e" class="" dir="auto"><strong>Supabase</strong> merupakan salah satu platform BaaS yang mirip seperti Firebase, tapi berbasis <strong>open-source</strong> dan menggunakan <strong>PostgreSQL</strong> sebagai databasenya. Supabase lengkap dengan fitur BaaS umum seperti Database, REST API, Authentication, Storage dll.</p><p id="41b54857-ba46-8058-ad9d-c65edfcc7d43" class="" dir="auto">Silahkan ikuti langkah berikut:</p><details id="41b54857-ba46-80e8-818d-c46fa5a945ea" open="" class="toggle" dir="auto"><summary>1️⃣ <code>Sign In</code>, <code>Create Organization</code> dan <code>New Project</code></summary><div class="indented"><div id="41b54857-ba46-8094-9504-ecbbd31f1241" class="column-list" data-notion-column-list="" dir="auto"><div id="41b54857-ba46-80bf-b822-f7060178a430" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><p id="41b54857-ba46-802a-b242-f68fa3a1e073" class="" dir="auto">Klik sign in, jika punya akun GitHub, bisa langsung “Continue With GitHub”.</p><p id="41b54857-ba46-8047-8c23-d01736b8ea81" class="" dir="auto">jika ingin membuat akun dengan email, klik “Sign Up Now” dan ikuti langkah-langkah yang tersedia</p><p id="41b54857-ba46-80c5-8bb1-fab1c114a6c3" class="" dir="auto">
+</p></div><div id="41b54857-ba46-8009-9cc3-c02eb20e01ff" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><figure id="41b54857-ba46-8090-8fc5-f7dccfdc0f16" class="image" data-notion-image="d37cd296-830d-4ab1-bbf1-83fabb5bd40b.png" dir="ltr"><a href="d37cd296-830d-4ab1-bbf1-83fabb5bd40b.png"><img style="width:240px" src="d37cd296-830d-4ab1-bbf1-83fabb5bd40b.png"/></a></figure></div></div><div id="41b54857-ba46-803e-929d-c64fc9f000a4" class="column-list" data-notion-column-list="" dir="auto"><div id="41b54857-ba46-800b-8006-df2dcd9ff2b3" style="width:100%" class="column" data-notion-column-ratio="1" dir="auto"><p id="41b54857-ba46-80c9-824c-e7d26da35c64" class="" dir="auto">Jika sudah membuat akun, kita akan diminta untuk <code>Create Organizaton</code>. Biarkan isian yang ada lalu Klik “Create Organization”</p><p id="41b54857-ba46-80b1-9213-e4828d78311c" class="" dir="auto">
+</p></div><div id="41b54857-ba46-80bc-ae6a-d1a6a31d5cd5" style="width:100%" class="column" data-notion-column-ratio="1" dir="auto"><figure id="41b54857-ba46-80b2-a164-e916cc2f625c" class="image" data-notion-image="image%203.png" dir="ltr"><a href="image%203.png"><img style="width:240px" src="image%203.png"/></a></figure></div></div><div id="41b54857-ba46-8017-839e-c0f6a1d86488" class="column-list" data-notion-column-list="" dir="auto"><div id="41b54857-ba46-80ee-83c9-ea0bd091ef03" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><p id="41b54857-ba46-8085-be5f-de56cf095e31" class="" dir="auto">Selanjutnya kita akan <code>Create New Project</code>. Silahkan isi form berikut:</p><ul id="41b54857-ba46-8055-a31d-f46ce50129bd" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Project Name <p id="41b54857-ba46-80cd-9168-d15f8d09d712" class="" dir="auto"><em>(isi sesuai aplikasi)</em></p></li></ul><ul id="41b54857-ba46-805f-92fa-e2c1a14d3fca" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Database Password<p id="41b54857-ba46-807b-801f-de1cd9de3457" class="" dir="auto"><em>(bisa klik Generate Password)</em></p></li></ul><ul id="41b54857-ba46-809a-8d4c-fa66b5a21554" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Region Server<p id="41b54857-ba46-805f-b588-ebe4d9ccd400" class="" dir="auto"><em>(pilih server terdekat, seperti singapore)</em></p></li></ul><p id="41b54857-ba46-802d-9cb5-c800a0a29bea" class="" dir="auto">Lalu klik “Create New Project”</p></div><div id="41b54857-ba46-8019-9a9f-caa83a0715e2" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><figure id="41b54857-ba46-80f7-870d-f911b7d8ac17" class="image" data-notion-image="image%204.png" dir="ltr"><a href="image%204.png"><img style="width:317.98828125px" src="image%204.png"/></a></figure></div></div><hr id="41b54857-ba46-807e-915b-fc8ce92cd2f9" dir="auto"/><p id="41b54857-ba46-8093-8a2e-df1483191a9c" class="" dir="auto">Tampilan awal setelah membuat project baru</p><figure id="41b54857-ba46-803d-a914-c18f70b8aae1" class="image" data-notion-image="image%205.png" dir="ltr"><a href="image%205.png"><img style="width:628.02734375px" src="image%205.png"/></a></figure><p id="41b54857-ba46-80f4-822f-efea46264e79" class="" dir="auto">
+</p></div></details><details id="41b54857-ba46-8002-a2da-d7625cffa15c" open="" class="toggle" dir="auto"><summary>2️⃣ Buat table baru  <code>note</code> <em>(Turn Off RLS)</em></summary><div class="indented"><p id="41b54857-ba46-8001-948e-ebbe7b3a9e71" class="" dir="auto">Pada bagian sidebar, pilih Table Editor → klik “Create New Table”  → beri nama table <code>note</code></p><div id="41b54857-ba46-80e8-ab14-e915a2217035" class="column-list" data-notion-column-list="" dir="auto"><div id="41b54857-ba46-8082-b9ae-c1a00056d941" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><figure id="41b54857-ba46-80a8-8591-cc702d9ce15f" class="image" data-notion-image="image%206.png" dir="ltr"><a href="image%206.png"><img style="width:283.017578125px" src="image%206.png"/></a></figure></div><div id="41b54857-ba46-8062-bf90-c0947de9c2c0" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><figure id="41b54857-ba46-8077-930e-e3ab8ce0d454" class="image" data-notion-image="image%207.png" dir="ltr"><a href="image%207.png"><img style="width:283.0078125px" src="image%207.png"/></a></figure></div></div><p id="41b54857-ba46-8037-b620-ceb712e977e0" class="" dir="auto">Jangan ceklis pada bagian “Enable Row Level Security”, jika ada prompt, klik Confirm.</p><div id="41b54857-ba46-8087-9269-eea3383cadff" class="column-list" data-notion-column-list="" dir="auto"><div id="41b54857-ba46-8060-b53f-c32efb472c52" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><aside class="block-color-yellow_background callout" data-notion-callout="" data-notion-callout-background="yellow_background" style="white-space:pre-wrap;display:flex" id="41b54857-ba46-80a7-bfd4-e0c8a57f44ba" dir="ltr"><div style="width:100%"><p id="41b54857-ba46-80f9-afbb-c4d765921564" class="" dir="auto">⚠️ PostgreSQL punya fitur keamanan bernama <strong>Row Level Security (RLS)</strong>, yang bisa batasi data mana yang bisa diakses oleh user tertentu. </p><p id="41b54857-ba46-8074-8193-e4d6b21a2cbc" class="" dir="auto">Tapi saat masih belajar atau testing, RLS akan dimatikan dulu agar lebih mudah melakukan CRUD tanpa harus login.</p></div></aside></div><div id="41b54857-ba46-80b8-8402-ecbf6432866f" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><figure id="41b54857-ba46-802a-adfe-d8aa4ff8ea36" class="image" data-notion-image="image%208.png" dir="ltr"><a href="image%208.png"><img style="width:283.0078125px" src="image%208.png"/></a></figure><figure id="41b54857-ba46-8075-9582-f71ed1ce8583" class="image" data-notion-image="image%209.png" dir="ltr"><a href="image%209.png"><img style="width:282.998046875px" src="image%209.png"/></a></figure></div></div><p id="41b54857-ba46-8048-a008-f244a2255172" class="" dir="auto">Isi detail tabel sebagai berikut:</p><table id="41b54857-ba46-8091-ba5a-f7a5d1eec5c2" class="simple-table" dir="ltr"><thead class="simple-table-header"><tr id="41b54857-ba46-8043-8ca4-c05ebf9ade9e" dir="ltr"><th id="Rc]k" class="simple-table-header-color simple-table-header">Field Name</th><th id="a]^H" class="simple-table-header-color simple-table-header">Type</th><th id="h[bJ" class="simple-table-header-color simple-table-header">Description</th></tr></thead><tbody><tr id="41b54857-ba46-80a4-a7c1-f42b54088d35" dir="ltr"><th id="Rc]k" class="simple-table-header-color simple-table-header"><code>id</code></th><td id="a]^H" class=""><code>int8</code></td><td id="h[bJ" class="">Primary key, Is Unique,  Is Identity</td></tr><tr id="41b54857-ba46-804a-b87c-ebfd191e4b37" dir="ltr"><th id="Rc]k" class="simple-table-header-color simple-table-header"><code>title</code></th><td id="a]^H" class=""><code>text</code></td><td id="h[bJ" class="">Judul catatan</td></tr><tr id="41b54857-ba46-8065-af94-c9743a891313" dir="ltr"><th id="Rc]k" class="simple-table-header-color simple-table-header"><code>content</code></th><td id="a]^H" class=""><code>text</code></td><td id="h[bJ" class="">Isi catatan</td></tr><tr id="41b54857-ba46-80f2-b4f9-d9ededb6194c" dir="ltr"><th id="Rc]k" class="simple-table-header-color simple-table-header"><code>status</code></th><td id="a]^H" class=""><code>varchar</code> <code>20</code></td><td id="h[bJ" class="">To Do/On Progress/Done</td></tr><tr id="41b54857-ba46-80e2-af59-f5fb0c7591fc" dir="ltr"><th id="Rc]k" class="simple-table-header-color simple-table-header"><code>created_at</code></th><td id="a]^H" class=""><code>timestamp</code></td><td id="h[bJ" class="">Auto-timestamp saat dibuat</td></tr></tbody></table><p id="41b54857-ba46-809e-9b58-c856ddd3e052" class="" dir="auto">Hasil akhir tabel seperti berikut, jika sudah sesuai, klik “Save”</p><figure id="41b54857-ba46-80fb-9549-fc86799d64d9" class="image" data-notion-image="image%2010.png" dir="ltr"><a href="image%2010.png"><img style="width:480px" src="image%2010.png"/></a></figure><p id="41b54857-ba46-8023-8336-fbf98ab12c5d" class="" dir="auto">
+</p></div></details><details id="41b54857-ba46-805c-9db6-fdf1597bacaa" open="" class="toggle" dir="auto"><summary>3️⃣ REST API untuk table <code>note</code></summary><div class="indented"><p id="41b54857-ba46-80fe-8a8c-def38ca055f7" class="" dir="auto">Supabase secara otomatis menyediakan REST API untuk setiap table. <br/>Beberapa hal yang perlu diketahui:</p><ul id="41b54857-ba46-8049-af02-e2d05aa03f10" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Project URL<em> (Integration → Data API → API URL)</em><figure id="41b54857-ba46-80a6-bf66-fd26345eba86" class="image" data-notion-image="image%2011.png" dir="ltr"><a href="image%2011.png"><img style="width:590.05859375px" src="image%2011.png"/></a></figure><p id="41b54857-ba46-80e3-a2a7-ded14882ec3e" class="" dir="auto">Simpan API URL sebagai url project supabase</p><p id="41b54857-ba46-800c-b840-d0b4344a97b0" class="" dir="auto">
+</p></li></ul><ul id="41b54857-ba46-8000-84c0-cc5ed034539d" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Apikey <em>(Project Settings → API Keys → Publishable Key)</em><p id="41b54857-ba46-801e-8817-d2b1f886b3fe" class="" dir="auto">Selanjutnya kita akan membuat publishable API KEY </p><figure id="41b54857-ba46-8056-b3e4-d7f99ae85ca3" class="image" data-notion-image="a85ecb8b-8a15-4f79-bcac-42eb5df5c42a.png" dir="ltr"><a href="a85ecb8b-8a15-4f79-bcac-42eb5df5c42a.png"><img style="width:719.984375px" src="a85ecb8b-8a15-4f79-bcac-42eb5df5c42a.png"/></a></figure><p id="41b54857-ba46-80a4-bd1d-cf8a197efec9" class="" dir="auto">Silahkan isi dengan nama “apikey” lalu klik “Create Publishable API Key”</p><figure id="41b54857-ba46-805d-a14a-eb04603cc67a" class="image" style="text-align:center" data-notion-image="image%2012.png" dir="ltr"><a href="image%2012.png"><img style="width:336px" src="image%2012.png"/></a></figure><p id="41b54857-ba46-8083-87ca-d3af7569d30b" class="" dir="auto">Jika sudah berhasil, silahakan di copy apikey untuk kita gunakan nanti</p><figure id="41b54857-ba46-80e8-a087-d826b3b25981" class="image" data-notion-image="image%2013.png" dir="ltr"><a href="image%2013.png"><img style="width:590.0558471679688px" src="image%2013.png"/></a></figure></li></ul><p id="41b54857-ba46-80f1-a954-fce7719d1f31" class="" dir="auto">
+</p></div></details><details id="41b54857-ba46-80ad-b84d-e0bfbdbeea9f" open="" class="toggle" dir="auto"><summary>4️⃣ Test API </summary><div class="indented"><p id="41b54857-ba46-8004-9d57-dc2bb7b43055" class="" dir="auto">Kita coba lakukan testing apakah REST API ini berfungsi dengan baik menggunakan extension <code>RapidAPI</code>  di vscode:</p><div id="41b54857-ba46-8079-9d83-e70b78815c4c" class="column-list" data-notion-column-list="" dir="auto"><div id="41b54857-ba46-80b0-8dc6-c97d891f05ee" style="width:31.25%" class="column" data-notion-column-ratio="0.3125" dir="auto"><p id="41b54857-ba46-8036-a576-dce5d7a06d35" class="" dir="auto">Pastikan setiap melakukan request memiliki Header sebagai berikut:</p><p id="41b54857-ba46-800a-9942-f085dec246dc" class="" dir="auto">
+</p></div><div id="41b54857-ba46-8095-8c7c-d17ff5c55496" style="width:68.75%" class="column" data-notion-column-ratio="0.6875" dir="auto"><figure id="41b54857-ba46-8051-add0-cd6008e67c07" class="image" data-notion-image="fcceff97-b539-4d8c-968e-78c189865f36.png" dir="ltr"><a href="fcceff97-b539-4d8c-968e-78c189865f36.png"><img style="width:719.984375px" src="fcceff97-b539-4d8c-968e-78c189865f36.png"/></a></figure><figure id="41b54857-ba46-80fe-bdf1-d8a6c8fb09a2" class="image" data-notion-image="image%2014.png" dir="ltr"><a href="image%2014.png"><img style="width:395.14422607421875px" src="image%2014.png"/></a><figcaption>masukkan value apikey ke dalam Token</figcaption></figure></div></div><div id="41b54857-ba46-8079-9848-c04029982643" class="column-list" data-notion-column-list="" dir="auto"><div id="41b54857-ba46-802a-b2da-d451908568a9" style="width:31.25%" class="column" data-notion-column-ratio="0.3125" dir="auto"><p id="41b54857-ba46-80ee-8c3d-d988b1c3dc35" class="" dir="auto">Jika berhasil maka akan mendapat respon seperti berikut:</p></div><div id="41b54857-ba46-80d1-8f2f-ccda99e61475" style="width:68.75%" class="column" data-notion-column-ratio="0.6875" dir="auto"><figure id="41b54857-ba46-80bd-bf50-f83fe8331ce0" class="image" data-notion-image="image%2015.png" dir="ltr"><a href="image%2015.png"><img style="width:395.1322326660156px" src="image%2015.png"/></a></figure></div></div></div></details><details id="41b54857-ba46-80da-94ed-f6c3a1e5d451" open="" class="toggle" dir="auto"><summary>5️⃣ Test CRUD</summary><div class="indented"><details id="41b54857-ba46-80ae-b47d-e1a7f7f17ac7" open="" class="block-color-teal_background toggle" data-notion-highlight="teal_background" dir="auto"><summary>Menambah Data - POST</summary><div class="indented"><ul id="41b54857-ba46-80ad-b626-fdeb93179d69" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><code>POST</code> → https://<code>&lt;API-URL&gt;</code>/<code>note</code></li></ul><ul id="41b54857-ba46-8047-aa3f-f3c569ed7b44" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><code>Body</code>, isikan value JSON berikut:<div id="41b54857-ba46-80c7-8f21-c2164c2a8e77" class="column-list" data-notion-column-list="" dir="auto"><div id="41b54857-ba46-80eb-b414-e4a6389cd164" style="width:43.75%" class="column" data-notion-column-ratio="0.4375" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js" integrity="sha512-QXFMVAusM85vUYDaNgcYeU3rzSlc+bTV4JvkfJhjxSHlQEo+ig53BtnGkvFTiNJh8D+wv6uWAQ2vJaVmxe8d3w==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><pre id="41b54857-ba46-80a3-84a1-df26bfe774fc" class="code code-wrap" data-notion-code-syntax="json"><code class="language-json" style="white-space:pre-wrap;word-break:break-all">{
+  &quot;title&quot;: &quot;Belajar BaaS&quot;,
+  &quot;content&quot;: &quot;BaaS menggunakan Supbase&quot;
+}</code></pre></div><div id="41b54857-ba46-80ba-9123-dea5891bfb4e" style="width:56.25%" class="column" data-notion-column-ratio="0.5625" dir="auto"><figure id="41b54857-ba46-809a-9f13-f053bf340138" class="image" data-notion-image="c7432796-4b83-48e9-961d-c7d079884e3a.png" dir="ltr"><a href="c7432796-4b83-48e9-961d-c7d079884e3a.png"><img style="width:666.3464837049743px" src="c7432796-4b83-48e9-961d-c7d079884e3a.png"/></a></figure></div></div></li></ul><ul id="41b54857-ba46-809a-83ab-f47663b83ca4" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Klik “Send”, maka akan diterima respon code <code>201 - Created</code> yang artinya data berhasil ditambahkan. Cek Table Editor untuk melihat data yang baru<figure id="41b54857-ba46-80bf-b34a-e86693af72a4" class="image" data-notion-image="image%2016.png" dir="ltr"><a href="image%2016.png"><img style="width:626.005859375px" src="image%2016.png"/></a></figure></li></ul><p id="41b54857-ba46-804b-9074-d20f399272e1" class="" dir="auto">
+</p></div></details><details id="41b54857-ba46-8009-a3bc-f6c9e0423e2d" open="" class="block-color-gray_background toggle" data-notion-highlight="gray_background" dir="auto"><summary>Mengambil Data - GET</summary><div class="indented"><ul id="41b54857-ba46-803b-8f33-f002082ed7c7" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><code>GET</code>→ https://<code>&lt;API-URL&gt;</code>/<code>note</code></li></ul><ul id="41b54857-ba46-8020-b80c-e5c354fb8133" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><code>Body</code> dikosongkan</li></ul><ul id="41b54857-ba46-8046-9e08-fb600faffe14" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Klik “Send”, maka akan diterima respon code <code>200 - OK</code> yang artinya data berhasil didapatkan<figure id="41b54857-ba46-80b3-a988-ce2e208a922b" class="image" data-notion-image="0e83e128-7852-4ca0-8cbe-5de129152d13.png" dir="ltr"><a href="0e83e128-7852-4ca0-8cbe-5de129152d13.png"><img style="width:442.35294117647055px" src="0e83e128-7852-4ca0-8cbe-5de129152d13.png"/></a></figure><p id="41b54857-ba46-8002-b5f2-fa12cfc80bce" class="" dir="auto">
+</p></li></ul></div></details><details id="41b54857-ba46-8015-ab7e-de0933657a6e" open="" class="block-color-orange_background toggle" data-notion-highlight="orange_background" dir="auto"><summary>Memperbaharui Data - PATCH</summary><div class="indented"><ul id="41b54857-ba46-804c-8624-e671f60b6ceb" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><code>PATCH</code>→ https://<code>&lt;API-URL&gt;</code>/<code>note</code></li></ul><ul id="41b54857-ba46-80b8-b24f-c064e8f1f830" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><code><strong>Body</strong></code> : Isi dengan data JSON yang ingin diubah. Contoh: mengganti nilai <code>title</code> dari data yang sudah ada.<div id="41b54857-ba46-8047-a20f-cf584585e19e" class="column-list" data-notion-column-list="" dir="auto"><div id="41b54857-ba46-80de-9527-fc2169498905" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><pre id="41b54857-ba46-80af-8232-f2858c2ad259" class="code code-wrap" data-notion-code-syntax="json"><code class="language-json" style="white-space:pre-wrap;word-break:break-all">{
+  &quot;title&quot;: &quot;Belajar BaaS di PCR&quot;
+}</code></pre></div><div id="41b54857-ba46-8073-83d5-e551cb498635" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><figure id="41b54857-ba46-806f-b8ef-e284b7325780" class="image" data-notion-image="image%2017.png" dir="ltr"><a href="image%2017.png"><img style="width:626.044921875px" src="image%2017.png"/></a></figure><p id="41b54857-ba46-80a9-859c-e5a21a50119e" class="" dir="auto">
+</p></div></div></li></ul><ul id="41b54857-ba46-80ba-b9c3-ddcdaf579916" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><code><strong>Query</strong></code><strong>:</strong> isi dengan <code>id</code>, dan beri <strong>value</strong> sesuai <code>id</code> data yang ingin diperbarui.<div id="41b54857-ba46-807c-899a-eaffa84f3caa" class="column-list" data-notion-column-list="" dir="auto"><div id="41b54857-ba46-8084-97e4-e25f148b3e1f" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><figure id="41b54857-ba46-80a3-bfb2-d84ad7e6b656" class="image" data-notion-image="image%2018.png" dir="ltr"><a href="image%2018.png"><img style="width:384px" src="image%2018.png"/></a></figure></div><div id="41b54857-ba46-80aa-bf4d-d888c6c429c4" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><p id="41b54857-ba46-80e1-9ce9-f5a727d065fa" class="" dir="auto"><code>id : eq.11</code> → cari data dengan <code>id</code> yang <strong>sama dengan</strong> <code>11</code>.</p><blockquote id="41b54857-ba46-806f-968d-c003a3cb8783" class="" dir="auto"><em>eq adalah singkatan dari equal (sama dengan).</em><p id="41b54857-ba46-80d6-ab2d-eb0b2a56e808" class="" dir="auto"><em>Jadi </em><em><code>id=eq.11</code></em><em> artinya: </em><em><strong>id sama dengan 11</strong></em><em>.</em></p></blockquote></div></div></li></ul><ul id="41b54857-ba46-8004-92cc-f1e875401890" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Klik <strong>&quot;Send&quot;</strong>, jika berhasil akan muncul <strong> respon </strong><code><strong>204 (No Content)</strong></code> <figure id="41b54857-ba46-80c3-9bb9-f39a07aecfbc" class="image" data-notion-image="eb82d2ab-0302-4f60-8e13-6e6aee06c556.png" dir="ltr"><a href="eb82d2ab-0302-4f60-8e13-6e6aee06c556.png"><img style="width:288px" src="eb82d2ab-0302-4f60-8e13-6e6aee06c556.png"/></a></figure></li></ul><p id="41b54857-ba46-80d5-b0e6-c5498bf31e2d" class="" dir="auto">
+</p></div></details><details id="41b54857-ba46-8030-b467-f2b1742b546a" open="" class="block-color-pink_background toggle" data-notion-highlight="pink_background" dir="auto"><summary>Menghapus Data - DELETE</summary><div class="indented"><ul id="41b54857-ba46-80e4-b6ed-f6e9fe240999" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><code>DELETE </code>→ https://<code>&lt;API-URL&gt;</code>/<code>note</code></li></ul><ul id="41b54857-ba46-8052-9b9a-c77ada70e08a" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><code>Body</code> : dikosongkan</li></ul><ul id="41b54857-ba46-806a-871a-f96bf885d5b1" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><code><strong>Query</strong></code><strong>:</strong> isi dengan <code>id</code>, dan beri <strong>value</strong> sesuai <code>id</code> data yang ingin diperbarui.<div id="41b54857-ba46-800b-a386-e3b6be188d8a" class="column-list" data-notion-column-list="" dir="auto"><div id="41b54857-ba46-80f4-885a-f76a4bbd8169" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><figure id="41b54857-ba46-8082-b934-ffb57f2e6a66" class="image" data-notion-image="image%2018.png" dir="ltr"><a href="image%2018.png"><img style="width:384px" src="image%2018.png"/></a></figure></div><div id="41b54857-ba46-80a8-bf82-e761e9cc545c" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><p id="41b54857-ba46-8091-b65d-f03b8983864f" class="" dir="auto"><code>id : eq.11</code> → cari data dengan <code>id</code> yang <strong>sama dengan</strong> <code>11</code>.</p><blockquote id="41b54857-ba46-806c-afed-f611bc4e3fc2" class="" dir="auto"><em>eq adalah singkatan dari equal (sama dengan).</em><p id="41b54857-ba46-809c-9f22-e3c534e21d24" class="" dir="auto"><em>Jadi </em><em><code>id=eq.11</code></em><em> artinya: </em><em><strong>id sama dengan 11</strong></em><em>.</em></p></blockquote></div></div></li></ul><ul id="41b54857-ba46-80ae-a6c0-eec639278e87" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Klik <strong>&quot;Send&quot;</strong>, jika berhasil akan muncul <strong> respon </strong><code><strong>204 (No Content)</strong></code> <figure id="41b54857-ba46-80c1-a807-d1daf51bd6fa" class="image" data-notion-image="eb82d2ab-0302-4f60-8e13-6e6aee06c556.png" dir="ltr"><a href="eb82d2ab-0302-4f60-8e13-6e6aee06c556.png"><img style="width:288px" src="eb82d2ab-0302-4f60-8e13-6e6aee06c556.png"/></a></figure></li></ul><p id="41b54857-ba46-8064-a11c-fcb285591649" class="" dir="auto">
+</p></div></details></div></details></div></details><hr id="41b54857-ba46-8075-a1d2-c965dcf972eb" dir="auto"/><details open="" class="" dir="auto"><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0"><h1 id="41b54857-ba46-80bd-bad9-f3ba6f645605" style="display:inline-block">📂 Retrofit - <a href="https://catfact.ninja/fact">catfact.ninja</a></h1></summary><div class="indented"><p id="41b54857-ba46-80e6-b3d1-dd8a6c2ff8c0" class="" dir="auto">Kita akan menggunakan Retrofit untuk mengambil data dari REST API terkait fakta kucing dari URL berikut:</p><p id="41b54857-ba46-80da-85d2-e5523dd01111" class="" dir="auto"><a href="https://catfact.ninja/fact">https://catfact.ninja/fact</a></p><p id="41b54857-ba46-802e-9056-f7aa3a89c0ca" class="" dir="auto">Jika diakses, maka akan memberi output data JSON dengan format berikut:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js" integrity="sha512-m3JYEI6gx5fh9jF10FjGoMzVKcV2N6nchcDcqPCdI1L3R2WQV7br2XVNR8iTLb2daOMRl3zldbcfT40xU2ntVw==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><pre id="41b54857-ba46-8090-99a0-de1bc295273e" class="code code-wrap" data-notion-code-syntax="jsx"><code class="language-jsx" style="white-space:pre-wrap;word-break:break-all">{
+  &quot;fact&quot;: &quot;Cats sleep for 70% of their lives.&quot;,
+  &quot;length&quot;: 36
+}</code></pre><aside class="block-color-gray_background callout" data-notion-callout="" data-notion-callout-icon="⚠️" data-notion-callout-background="gray_background" style="white-space:pre-wrap;display:flex" id="41b54857-ba46-80e0-a061-cb924f55d9a9" dir="ltr"><div style="font-size:1.5em"><span class="icon" data-emoji="⚠️"></span></div><div style="width:100%"><p id="41b54857-ba46-80af-86bb-df19220393b5" class="" dir="auto">Silahkan lakukan tahapan berikut:</p><ul id="41b54857-ba46-80c7-9c51-ed0487bf7f1e" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Buat package <code>data</code> sejajar dengan Home, Message dan More</li></ul><ul id="41b54857-ba46-8093-9f08-d7ce0efc4dd8" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Buat package <code>model</code> dan <code>api</code> didalam nya</li></ul></div></aside><p id="41b54857-ba46-807d-aa11-fe4e6fa5e968" class="" dir="auto">
+</p><hr id="41b54857-ba46-807a-9a60-d7c7f82d7a4c" dir="auto"/><details id="41b54857-ba46-801c-8243-e3f87cbc9bed" open="" class="toggle" dir="auto"><summary>1️⃣ Install Dependency Retrofit di <code>build.gradle (Module)</code></summary><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-kotlin.min.js" integrity="sha512-nLUQ1JXk2Kj5a8FlfriL+WmiGbAq3W/dQirx3IlVfkpU7byrzLD19pJnYsG8vPTDvsRMpQDVSezvzkKUNcqUSw==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><pre id="41b54857-ba46-8021-b7dc-c14a2d66b67b" class="code code-wrap" data-notion-code-syntax="kotlin"><code class="language-kotlin" style="white-space:pre-wrap;word-break:break-all">implementation (&quot;com.squareup.retrofit2:retrofit:2.9.0&quot;)
+implementation (&quot;com.squareup.retrofit2:converter-gson:2.9.0&quot;)
+implementation (&quot;org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3&quot;)</code></pre><p id="41b54857-ba46-80f7-8ba9-f188306f12a5" class="" dir="auto">Lalu klik “Sync Now”</p></div></details><hr id="41b54857-ba46-80bb-99c4-cf626d009596" dir="auto"/><details id="41b54857-ba46-80fb-9cfb-e9beed4bd5d5" open="" class="toggle" dir="auto"><summary>2️⃣ Pada package <code>data/model</code>, buat Kotlin Data Class <code>CatFactModel</code></summary><div class="indented"><details id="41b54857-ba46-80d1-bc39-e074fdae8c0a" open="" class="toggle" dir="auto"><summary>data/model/<code>CatFactModel.kt</code></summary><div class="indented"><pre id="41b54857-ba46-807b-8c34-f19c2e4f5fa1" class="code code-wrap" data-notion-code-syntax="kotlin"><code class="language-kotlin" style="white-space:pre-wrap;word-break:break-all">data class CatFactModel(
+    val fact: String,
+    val length: Int
+)</code></pre></div></details><p id="41b54857-ba46-80b1-8824-cb9b376457c1" class="" dir="auto">
+</p></div></details><hr id="41b54857-ba46-806b-9780-e7e989bf85a3" dir="auto"/><details id="41b54857-ba46-800c-b553-ffe540eb2042" open="" class="toggle" dir="auto"><summary>3️⃣ Pada package <code>data/api</code>, buat Kotlin Interface Class dan Object Class file berikut:</summary><div class="indented"><details id="41b54857-ba46-80e9-bd62-f24b96ac97fb" open="" class="toggle" dir="auto"><summary>data/api/<code>CatFactApiService.kt</code></summary><div class="indented"><pre id="41b54857-ba46-80ec-9762-e3ca8d528d94" class="code code-wrap" data-notion-code-syntax="kotlin"><code class="language-kotlin" style="white-space:pre-wrap;word-break:break-all">interface CatFactApiService {
+    @GET(&quot;fact&quot;)
+    suspend fun getCatFact(): CatFactModel
+}</code></pre></div></details><details id="41b54857-ba46-80d0-a639-e3a50bdb47c7" open="" class="toggle" dir="auto"><summary>data/api/<code>CatFactApiClient.kt</code></summary><div class="indented"><pre id="41b54857-ba46-805b-bc1b-d6e57ff90582" class="code code-wrap" data-notion-code-syntax="kotlin"><code class="language-kotlin" style="white-space:pre-wrap;word-break:break-all">object CatFactApiClient {
+    private const val BASE_URL = &quot;https://catfact.ninja&quot;
+
+    val apiService: CatFactApiService by lazy {
+        Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(CatFactApiService::class.java)
+    }
+}</code></pre></div></details><p id="41b54857-ba46-8072-83ef-c26eb7ce5bc1" class="" dir="auto">
+</p></div></details><hr id="41b54857-ba46-800c-af5d-c061b962c913" dir="auto"/><details id="41b54857-ba46-807a-a89e-ea398cd9f1ea" open="" class="toggle" dir="auto"><summary>4️⃣ Pada layout <code>fragment_home</code>, tambahkan textView <code>tvCatFact</code> dan button <code>btnRefresh</code> </summary><div class="indented"><div id="41b54857-ba46-8037-a4d5-fb3d8fa6c507" class="column-list" data-notion-column-list="" dir="auto"><div id="41b54857-ba46-8070-abdc-e4febb1dc66d" style="width:62.5%" class="column" data-notion-column-ratio="0.625" dir="auto"><pre id="41b54857-ba46-804d-84b0-fb23cd61d870" class="code code-wrap" data-notion-code-syntax="xml"><code class="language-xml" style="white-space:pre-wrap;word-break:break-all">&lt;TextView
+    android:id=&quot;@+id/tvCatFact&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:layout_marginTop=&quot;100dp&quot;
+    android:gravity=&quot;center&quot;
+    android:text=&quot;Loading cat fact...&quot;
+    android:textAlignment=&quot;center&quot;
+    android:textSize=&quot;18sp&quot; /&gt;
+
+&lt;Button
+    android:id=&quot;@+id/btnRefresh&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:layout_marginTop=&quot;12dp&quot;
+    android:text=&quot;Refresh&quot;
+        app:layout_constraintTop_toBottomOf=&quot;@+id/tvCatFact&quot; /&gt;</code></pre><p id="41b54857-ba46-801e-b912-e9750e9c9db7" class="" dir="auto">
+</p></div><div id="41b54857-ba46-8003-9240-f69a91299a61" style="width:37.5%" class="column" data-notion-column-ratio="0.375" dir="auto"><figure id="41b54857-ba46-80c8-96e7-fab69ffb3958" class="image" data-notion-image="image%2019.png" dir="ltr"><a href="image%2019.png"><img style="width:227.98959350585938px" src="image%2019.png"/></a></figure></div></div></div></details><hr id="41b54857-ba46-8008-b7be-d4f6116e9e08" dir="auto"/><details id="41b54857-ba46-80a9-acf8-e3ed43df3e3d" open="" class="toggle" dir="auto"><summary>5️⃣ Pada <code>FragmentHome</code>, tambahkan function <code>loadCatFact()</code> dan panggil di <code>onViewCreated</code></summary><div class="indented"><pre id="41b54857-ba46-80e3-8cce-d63240c84183" class="code code-wrap" data-notion-code-syntax="kotlin"><code class="language-kotlin" style="white-space:pre-wrap;word-break:break-all">    override fun onViewCreated(...) {
+		    ...
+		    
+		    loadCatFact()
+    }
+    
+    private fun loadCatFact() {
+        lifecycleScope.launch {
+            try {
+                val response = CatFactApiClient.apiService.getCatFact()
+                binding.tvCatFact.text = &quot;\&quot;${response.fact}\&quot;&quot;
+            } catch (e: Exception) {
+                binding.tvCatFact.text = &quot;Gagal mengambil fakta kucing.&quot;
+            }
+        }
+    }</code></pre><p id="41b54857-ba46-8082-8313-c99e12c99b17" class="" dir="auto">Coba akses fragment lalu setiap berpindah halaman dan kembali ke <code>FragmentHome</code> maka Cat Fact akan terus ter-update</p><p id="41b54857-ba46-8014-8c8d-d052124ee843" class="" dir="auto">
+</p><p id="41b54857-ba46-809f-979f-c6b1d502960d" class="" dir="auto">Jika pemanggilan API ingin dilakukan  saat klik tombol Refresh, terapkan <code>onCLickListener</code>pada tombol Refresh</p><pre id="41b54857-ba46-8034-a960-eb329f2b3a34" class="code code-wrap" data-notion-code-syntax="kotlin"><code class="language-kotlin" style="white-space:pre-wrap;word-break:break-all">		override fun onViewCreated(...) {
+		    ...
+		    
+		    binding.btnRefresh.setOnClickListener {
+            loadCatFact()
+        }
+    }</code></pre><p id="41b54857-ba46-80ef-9a08-d2fde850e6b6" class="" dir="auto">
+</p></div></details><hr id="41b54857-ba46-8069-9512-dbca64f27fd0" dir="auto"/><p id="41b54857-ba46-80bb-9c7d-ee10603e7878" class="" dir="auto">Hasil akhir:</p><div id="41b54857-ba46-804c-bbb6-f3d599866fe4" class="column-list" data-notion-column-list="" dir="auto"><div id="41b54857-ba46-807d-87d8-f1020e318206" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><figure id="41b54857-ba46-801f-9614-dafcc46a0445" class="image" data-notion-image="image%2020.png" dir="ltr"><a href="image%2020.png"><img style="width:341.9471130371094px" src="image%2020.png"/></a></figure></div><div id="41b54857-ba46-8082-b63f-ff0d43ac0fda" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><figure id="41b54857-ba46-8098-abce-d1a2e36dab0c" class="image" data-notion-image="image%2021.png" dir="ltr"><a href="image%2021.png"><img style="width:317.95672607421875px" src="image%2021.png"/></a></figure></div></div><p id="41b54857-ba46-806f-b9ec-db8172893d78" class="" dir="auto">
+</p></div></details><hr id="41b54857-ba46-80a1-b432-ec514cece1f9" dir="auto"/><details open="" class="" dir="auto"><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0"><h1 id="41b54857-ba46-80eb-b51a-ea8e2b455255" style="display:inline-block">📂 Retrofit - <a href="https://picsum.photos">picsum.photos</a></h1></summary><div class="indented"><p id="41b54857-ba46-803c-87e7-c42278584493" class="" dir="auto">Kita akan coba membuat halaman galeri photo yang berasal dari URL berikut:</p><p id="41b54857-ba46-80f6-b47d-c367d266db0d" class="" dir="auto"><a href="https://picsum.photos/v2/list">https://picsum.photos/v2/list</a></p><p id="41b54857-ba46-8028-b074-f1df1d6f5ae3" class="" dir="auto">Jika diakses, maka akan memberi output data JSON dengan format berikut:</p><pre id="41b54857-ba46-804e-a7b6-d30acb33a0cd" class="code code-wrap" data-notion-code-syntax="jsx"><code class="language-jsx" style="white-space:pre-wrap;word-break:break-all">[
+  {
+    &quot;id&quot;: &quot;0&quot;,
+    &quot;author&quot;: &quot;Alejandro Escamilla&quot;,
+    &quot;width&quot;: 5000,
+    &quot;height&quot;: 3333,
+    &quot;url&quot;: &quot;https://unsplash.com/photos/yC-Yzbqy7PY&quot;,
+    &quot;download_url&quot;: &quot;https://picsum.photos/id/0/5000/3333&quot;
+  },
+  ...,
+  ...,
+]</code></pre><p id="41b54857-ba46-8069-813d-f289573b1283" class="" dir="auto">
+</p><p id="41b54857-ba46-800c-a0cc-f9b72512c3ce" class="" dir="auto">
+</p><hr id="41b54857-ba46-8056-8b8e-ee51aacd40c8" dir="auto"/><details id="41b54857-ba46-807c-afb3-d9e17b3e7bd9" open="" class="toggle" dir="auto"><summary>1️⃣ Pada package <code>model</code>, buat Kotlin Data Class berikut</summary><div class="indented"><details id="41b54857-ba46-80ca-bf35-f238166847e6" open="" class="toggle" dir="auto"><summary>data/model/<code>PhotoModel.kt</code></summary><div class="indented"><pre id="41b54857-ba46-80f4-a1e4-de6b028927b8" class="code code-wrap" data-notion-code-syntax="kotlin"><code class="language-kotlin" style="white-space:pre-wrap;word-break:break-all">data class PhotoModel(
+    val id: String,
+    val author: String,
+    val download_url: String
+)</code></pre><p id="41b54857-ba46-80d0-aacf-e965fb9f75cc" class="" dir="auto">
+</p></div></details><p id="41b54857-ba46-8014-a07b-f434bf8f2073" class="" dir="auto">
+</p></div></details><hr id="41b54857-ba46-809c-a800-d57e0cf73138" dir="auto"/><details id="41b54857-ba46-803c-9785-ff04c94e9e5e" open="" class="toggle" dir="auto"><summary>2️⃣ Pada package <code>api</code>,  buat 2 file berikut:</summary><div class="indented"><details id="41b54857-ba46-808a-8f4a-d02045b60747" open="" class="toggle" dir="auto"><summary>data/api/<code>PhotoApiService.kt</code></summary><div class="indented"><pre id="41b54857-ba46-803a-8bfe-d64bd19bab20" class="code code-wrap" data-notion-code-syntax="kotlin"><code class="language-kotlin" style="white-space:pre-wrap;word-break:break-all">interface PhotoApiService {
+    @GET(&quot;list&quot;)
+    suspend fun getPhotos(): List&lt;PhotoModel&gt;
+}</code></pre></div></details><details id="41b54857-ba46-801a-9352-c9ab3f3a0d5e" open="" class="toggle" dir="auto"><summary>data/api/<code>PhotoApiClient.kt</code></summary><div class="indented"><pre id="41b54857-ba46-8056-9703-c27cba591430" class="code code-wrap" data-notion-code-syntax="kotlin"><code class="language-kotlin" style="white-space:pre-wrap;word-break:break-all">object PhotoApiClient {
+    private const val BASE_URL = &quot;https://picsum.photos/v2/&quot;
+
+    val apiService: PhotoApiService by lazy {
+        Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(PhotoApiService::class.java)
+    }
+}</code></pre></div></details><p id="41b54857-ba46-8016-9241-db080b830c7b" class="" dir="auto">
+</p></div></details><hr id="41b54857-ba46-80d9-a1f2-f72481b02772" dir="auto"/><details id="41b54857-ba46-803e-8821-ef38d9954cd9" open="" class="toggle" dir="auto"><summary>3️⃣ Buat Layout Resource File <code>item_photo.xml</code> untuk desain list per item  </summary><div class="indented"><details id="41b54857-ba46-80f3-9e8f-f147cab681c5" open="" class="toggle" dir="auto"><summary>res/layout/<code>item_photo.xml</code></summary><div class="indented"><pre id="41b54857-ba46-8015-ba05-de3b288de661" class="code code-wrap" data-notion-code-syntax="xml"><code class="language-xml" style="white-space:pre-wrap;word-break:break-all">&lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:orientation=&quot;vertical&quot;
+    android:padding=&quot;8dp&quot;&gt;
+
+    &lt;ImageView
+        android:id=&quot;@+id/imgPhoto&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;200dp&quot;
+        android:scaleType=&quot;centerCrop&quot;
+        app:layout_constraintEnd_toEndOf=&quot;parent&quot;
+        app:layout_constraintStart_toStartOf=&quot;parent&quot;
+        app:layout_constraintTop_toTopOf=&quot;parent&quot; /&gt;
+
+    &lt;TextView
+        android:id=&quot;@+id/tvAuthor&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_marginTop=&quot;8dp&quot;
+        android:paddingTop=&quot;4dp&quot;
+        android:text=&quot;Author&quot;
+        android:textSize=&quot;16sp&quot;
+        app:layout_constraintEnd_toEndOf=&quot;parent&quot;
+        app:layout_constraintHorizontal_bias=&quot;0.0&quot;
+        app:layout_constraintStart_toStartOf=&quot;parent&quot;
+        app:layout_constraintTop_toBottomOf=&quot;@+id/imgPhoto&quot; /&gt;
+&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</code></pre></div></details></div></details><hr id="41b54857-ba46-80c4-8f90-cb9d9f0fad94" dir="auto"/><details id="41b54857-ba46-8076-954f-ed67ae9f5101" open="" class="toggle" dir="auto"><summary>4️⃣ Pada package <code>Home</code>,  buat package baru bernama <code>photo</code> . Didalamnya, buat file berikut</summary><div class="indented"><details id="41b54857-ba46-8023-bc8d-d96940bb23bd" open="" class="toggle" dir="auto"><summary>Home/photo/<code>PhotoAdapter.kt</code></summary><div class="indented"><figure id="41b54857-ba46-8089-8932-eaa60977f9e3" data-notion-code-syntax="kotlin"><pre class="code code-wrap" data-notion-code-syntax="kotlin"><code class="language-kotlin" style="white-space:pre-wrap;word-break:break-all">class PhotoAdapter(private val items: List&lt;PhotoModel&gt;) : RecyclerView.Adapter&lt;PhotoAdapter.PhotoViewHolder&gt;() {
+
+    inner class PhotoViewHolder(val binding: ItemPhotoBinding) : RecyclerView.ViewHolder(binding.root)
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhotoViewHolder {
+        val binding = ItemPhotoBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return PhotoViewHolder(binding)
+    }
+
+    override fun onBindViewHolder(holder: PhotoViewHolder, position: Int) {
+        val item = items[position]
+        holder.binding.tvAuthor.text = item.author
+        Glide.with(holder.itemView.context)
+            .load(item.download_url)
+            .into(holder.binding.imgPhoto)
+    }
+
+    override fun getItemCount(): Int = items.size
+}</code></pre><figcaption>Perhatikan kode diatas. Kita menggunakan <code>RecyclerView</code> Adapter bukan ListView atau pun Simple Adapter</figcaption></figure></div></details><p id="41b54857-ba46-80ac-8e2f-fc901164c5c6" class="" dir="auto">
+</p></div></details><hr id="41b54857-ba46-8077-bb83-f438017abec1" dir="auto"/><details id="41b54857-ba46-80d1-b83a-f5ceed9e1915" open="" class="toggle" dir="auto"><summary>5️⃣ Pada <code>fragement_home.xml</code>, tambahkan <code>RecyclerView</code> dan atur constraint-nya</summary><div class="indented"><p id="41b54857-ba46-805f-b99f-dbbec9e1cfc8" class="" dir="auto">Kita terapkan tepat dibawah <code>btnRefresh</code></p><pre id="41b54857-ba46-80f3-91bd-c52037cbbd86" class="code code-wrap" data-notion-code-syntax="xml"><code class="language-xml" style="white-space:pre-wrap;word-break:break-all">    &lt;!--Komponen Catfact sebelumnya --&gt;
+    ...
+    
+    &lt;androidx.recyclerview.widget.RecyclerView
+        android:id=&quot;@+id/rvGallery&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;0dp&quot;
+        android:layout_marginTop=&quot;16dp&quot;
+        android:padding=&quot;8dp&quot;
+        app:layout_constraintTop_toBottomOf=&quot;@+id/btnRefresh&quot;/&gt;</code></pre><p id="41b54857-ba46-808c-a3ff-cb5b4b0719f2" class="" dir="auto">
+</p></div></details><hr id="41b54857-ba46-804d-be8d-c1719b657f72" dir="auto"/><details id="41b54857-ba46-8048-bbc2-d977dd47d750" open="" class="toggle" dir="auto"><summary>6️⃣ Pada <code>FragmentHome</code>, tambahkan function <code>loadPhoto()</code> dan panggil di <code>onViewCreated</code></summary><div class="indented"><pre id="41b54857-ba46-80c1-bde1-d892932535bd" class="code code-wrap" data-notion-code-syntax="kotlin"><code class="language-kotlin" style="white-space:pre-wrap;word-break:break-all">    override fun onViewCreated(...) {
+		    ...
+		    
+		    //loadFact()
+		    ...
+		    
+		    //btnRefresh
+		    ...
+		    
+		    loadPhoto()
+    }
+    
+    private fun loadFact() {...}
+    
+    private fun loadPhoto() {
+		    lifecycleScope.launch {
+		        try {
+		            val photos = PhotoApiClient.apiService.getPhotos()
+		            val adapter = PhotoAdapter(photos)
+		            binding.rvGallery.adapter = adapter
+		            
+		            /** List Tampil Vertical*/
+		            binding.rvGallery.layoutManager = LinearLayoutManager(requireContext())
+		            
+		            /** List Tampil Horizontal */
+		            //binding.rvGallery.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+		            
+		            /** List Tampil Grid */
+		            //binding.rvGallery.layoutManager = GridLayoutManager(requireContext(),2)
+		            
+		        } catch (e: Exception) {
+		            Toast.makeText(requireContext(), &quot;Gagal memuat gambar&quot;, Toast.LENGTH_SHORT).show()
+		        }
+		    }
+		}</code></pre><p id="41b54857-ba46-803f-bb79-c1cf69eb8509" class="" dir="auto">
+</p></div></details><hr id="41b54857-ba46-805a-ae38-c4d4c3c5e12e" dir="auto"/><p id="41b54857-ba46-8013-9856-f8fc3d491163" class="" dir="auto">Hasil Akhir:</p><div id="41b54857-ba46-8080-85e6-cbe4edbf0910" class="column-list" data-notion-column-list="" dir="auto"><div id="41b54857-ba46-8080-9a6f-c5b161cb8b95" style="width:37.5%" class="column" data-notion-column-ratio="0.375" dir="auto"><figure id="41b54857-ba46-808a-bc58-d8f20ed9e2fd" class="image" data-notion-image="image%2022.png" dir="ltr"><a href="image%2022.png"><img style="width:240px" src="image%2022.png"/></a></figure></div><div id="41b54857-ba46-8087-a8a4-ffb80658d15a" style="width:62.5%" class="column" data-notion-column-ratio="0.625" dir="auto"><p id="41b54857-ba46-80dc-905a-eab498dabfe8" class="" dir="auto">Gambar sudah berhasil muncul, tapi terkendala pada screen yang tidak bisa di scroll secara keseluruhan. </p><p id="41b54857-ba46-806a-b795-ccff33f40e02" class="" dir="auto">Kita perlu perbaiki masalah ini dengan menerapkan <code>NestedScroll</code></p><p id="41b54857-ba46-8044-a070-df82be108e3c" class="" dir="auto">
+</p></div></div><hr id="41b54857-ba46-80ed-86ff-d89c54ca8591" dir="auto"/><details open="" class="" dir="auto"><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><h2 id="41b54857-ba46-80fa-ad0e-e1ca214e75f0" style="display:inline-block">Fix Scroll Issue</h2></summary><div class="indented"><p id="41b54857-ba46-803f-ad60-cd0b307dc1de" class="" dir="auto">Kita akan perbaiki <code>fragment_home.xml</code> dengan menerapkan hal berikut:</p><ul id="41b54857-ba46-8028-a91a-c93bc20c8c9f" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Terapkan <code>CoordinatorLayout</code> (lihat kembali Pertemuan 7 bagain ListView)</li></ul><ul id="41b54857-ba46-80a4-b6aa-c6103fd71fde" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Hapus <code>View</code> bergelombang <br/><em>(karena kita akan menerapkan scroll maka komponen ini perlu di hapus. Silahkan explor lebih jauh jika tetap ingin menerapkan </em><em><code>View </code></em><em>Bergelombang + </em><em><code>CoordinatorLayout</code></em><em>)</em></li></ul><ul id="41b54857-ba46-80cf-a21e-eb3432b00cae" class="bulleted-list" dir="auto"><li style="list-style-type:disc"> Terapkan <code>NestedScrollView</code> agar tampilan bisa di-scroll</li></ul><ul id="41b54857-ba46-80f1-9ecb-cf9fb7115801" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Pastikan RecyclerView menggunakan <code>layout_height = “wrap_content”</code></li></ul><p id="41b54857-ba46-80c5-bc3c-c363f4ff2f41" class="" dir="auto">
+</p><details id="41b54857-ba46-80b0-8390-d88bef95f4d9" open="" class="block-color-default_background toggle" data-notion-highlight="default_background" dir="auto"><summary>Penyesuaian <code>fragment_home.xml</code></summary><div class="indented"><p id="41b54857-ba46-800b-b498-c057425948bc" class="" dir="auto">Perhatikan dengan seksama <code>CoordinatorLayout</code> , <code>AppBarLayout</code> , <code>NestedScrollView</code> </p><pre id="41b54857-ba46-8061-8d0f-e0a5c711972c" class="code code-wrap" data-notion-code-syntax="xml"><code class="language-xml" style="white-space:pre-wrap;word-break:break-all">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    ...&gt;
+
+    &lt;com.google.android.material.appbar.AppBarLayout
+        android:id=&quot;@+id/appBarLayout&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:theme=&quot;@style/ThemeOverlay.AppCompat.Dark.ActionBar&quot;&gt;
+
+        &lt;androidx.appcompat.widget.Toolbar ... /&gt;
+
+    &lt;/com.google.android.material.appbar.AppBarLayout&gt;
+
+    &lt;!-- ISI SEMUA KONTEN --&gt;
+    &lt;androidx.core.widget.NestedScrollView
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;match_parent&quot;
+        android:fillViewport=&quot;true&quot;
+        app:layout_behavior=&quot;@string/appbar_scrolling_view_behavior&quot;&gt;
+				
+				&lt;!-- Harus ada ConstraintLayout agar posisi Home kita tidak berubah --&gt;
+        &lt;androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:padding=&quot;16dp&quot;&gt;
+
+            &lt;TextView
+                android:id=&quot;@+id/textView2&quot;
+                .../&gt;
+
+            &lt;androidx.gridlayout.widget.GridLayout
+                android:id=&quot;@+id/grid_button&quot;
+                ...&gt;
+
+            &lt;TextView
+                android:id=&quot;@+id/tvCatFact&quot;
+                ... /&gt;
+
+            &lt;Button
+                android:id=&quot;@+id/btnRefresh&quot;
+                ... /&gt;
+						
+						&lt;!-- Pastikan layout_height=&quot;0dp&quot; untuk RecyclerView --&gt;
+            &lt;androidx.recyclerview.widget.RecyclerView
+                android:id=&quot;@+id/rvGallery&quot;
+                android:layout_width=&quot;match_parent&quot;
+                android:layout_height=&quot;0dp&quot;
+                android:padding=&quot;8dp&quot;
+                app:layout_constraintTop_toBottomOf=&quot;@+id/btnRefresh&quot; /&gt;
+
+        &lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;
+
+    &lt;/androidx.core.widget.NestedScrollView&gt;
+
+&lt;/androidx.coordinatorlayout.widget.CoordinatorLayout&gt;</code></pre><p id="41b54857-ba46-80b4-a0ca-ee72f7830f38" class="" dir="auto">
+</p></div></details><hr id="41b54857-ba46-804f-a001-d214beada3b5" dir="auto"/><p id="41b54857-ba46-809f-9a6a-ff4e73b710fc" class="" dir="auto">
+</p><p id="41b54857-ba46-8092-bf93-fc5c7fd75ae6" class="" dir="auto">Hasil Akhir setelah Penyesuaian:</p><div id="41b54857-ba46-80c6-87c2-f107fedc95e8" class="column-list" data-notion-column-list="" dir="auto"><div id="41b54857-ba46-80a7-8b00-caf3f4c0c2b9" style="width:37.5%" class="column" data-notion-column-ratio="0.375" dir="auto"><figure id="41b54857-ba46-8068-a875-d29a2ff7e64d" class="image" data-notion-image="image%2023.png" dir="ltr"><a href="image%2023.png"><img style="width:240px" src="image%2023.png"/></a></figure></div><div id="41b54857-ba46-80b4-80f1-f269a137eaad" style="width:62.5%" class="column" data-notion-column-ratio="0.625" dir="auto"><figure id="41b54857-ba46-80d5-af27-e12098e98226" class="image" data-notion-image="image%2024.png" dir="ltr"><a href="image%2024.png"><img style="width:240px" src="image%2024.png"/></a></figure></div></div></div></details><details open="" class="" dir="auto"><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><h2 id="41b54857-ba46-80b0-b347-ea41806133ae" style="display:inline-block">RecylerView Mode (Horizontal &amp; Grid)</h2></summary><div class="indented"><p id="41b54857-ba46-80f3-8aeb-d61b35cc01fe" class="" dir="auto">Pada function <code>loadPhoto()</code>, sudah tersedia 2 jenis lainnya dalam menampilkan RecyclerView.</p><figure id="41b54857-ba46-80ea-afef-fa59d85bc739" class="image" data-notion-image="image%2025.png" dir="ltr"><a href="image%2025.png"><img style="width:576px" src="image%2025.png"/></a></figure><p id="41b54857-ba46-8050-aff9-f43f3cb258d9" class="" dir="auto">Mode Horizontal, maka hasil akhirnya akan sebagai berikut </p><div id="41b54857-ba46-804d-b6a9-e164753143e2" class="column-list" data-notion-column-list="" dir="auto"><div id="41b54857-ba46-80fb-b242-f7bd6941e364" style="width:37.5%" class="column" data-notion-column-ratio="0.375" dir="auto"><figure id="41b54857-ba46-80f7-8da1-ccfa7680036b" class="image" data-notion-image="image%2026.png" dir="ltr"><a href="image%2026.png"><img style="width:240px" src="image%2026.png"/></a></figure><p id="41b54857-ba46-8022-8c40-fc3e40490c16" class="" dir="auto">
+</p></div><div id="41b54857-ba46-80da-96d8-e4fdb89bdeb0" style="width:62.50000000000002%" class="column" data-notion-column-ratio="0.6250000000000002" dir="auto"><figure id="41b54857-ba46-80e0-84ab-cac68bec7ce8" class="image" data-notion-image="image%2027.png" dir="ltr"><a href="image%2027.png"><img style="width:240px" src="image%2027.png"/></a></figure></div></div><p id="41b54857-ba46-806a-87ec-c1c4cb74b091" class="" dir="auto">Mode Grid, maka hasil akhirnya sebagai berikut</p><div id="41b54857-ba46-8012-99f3-f7ab897896d7" class="column-list" data-notion-column-list="" dir="auto"><div id="41b54857-ba46-80fb-a8cc-ed2f75d68f26" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><figure id="41b54857-ba46-8012-9226-e3218556740f" class="image" data-notion-image="image%2028.png" dir="ltr"><a href="image%2028.png"><img style="width:303.9895935058594px" src="image%2028.png"/></a></figure></div><div id="41b54857-ba46-805d-a4b9-dfc636898eeb" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><figure id="41b54857-ba46-8000-a8fb-e4f3880cc427" class="image" data-notion-image="image%2029.png" dir="ltr"><a href="image%2029.png"><img style="width:303.9895935058594px" src="image%2029.png"/></a></figure></div></div></div></details><p id="41b54857-ba46-8078-9513-c2e6d3a24564" class="" dir="auto">
+</p></div></details></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

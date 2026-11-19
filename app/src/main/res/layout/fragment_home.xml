@@ -1,82 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:orientation="vertical"
+    android:background="#F8F9FA">
 
-    <LinearLayout
+    <!-- Top Header Bar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarHome"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="24dp">
+        android:layout_height="?attr/actionBarSize"
+        android:background="#CBEE5870"
+        app:title="Home"
+        app:titleTextColor="#FFFFFF" />
 
-        <TextView
-            android:id="@+id/tvHomeTitle"
-            android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pemrograman Mobile"
-            android:textColor="#E91E63"
-            android:textSize="26sp"
-            android:textStyle="bold" />
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="20dp">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="140dp"
-            android:layout_height="130dp"
-            android:layout_marginTop="16dp"
-            android:contentDescription="Reading"
-            app:srcCompat="@drawable/reading" />
+            <!-- ImageView di Atas Welcome -->
+            <ImageView
+                android:id="@+id/imgHomeBanner"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginBottom="16dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/reading"
+                android:contentDescription="Gambar Belajar" />
 
-        <Button
-            android:id="@+id/btnToFourth"
-            android:layout_width="220dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="#FFC107"
-            android:text="Pertemuan 4" />
+            <TextView
+                android:id="@+id/tvWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Modul Pemograman Mobile!"
+                android:textColor="#2D3748"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btnToFifth"
-            android:layout_width="220dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:backgroundTint="#36C3B7"
-            android:text="Pertemuan 5" />
+            <TextView
+                android:id="@+id/tvSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Silakan pilih..."
+                android:textColor="#718096"
+                android:textSize="14sp" />
 
-        <Button
-            android:id="@+id/btnToSixth"
-            android:layout_width="220dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:backgroundTint="#00BCD4"
-            android:text="Pertemuan 6" />
+            <!-- Buttons Grid (2 Columns) -->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:columnCount="2"
+                android:alignmentMode="alignBounds">
 
-        <Button
-            android:id="@+id/btnToSeventh"
-            android:layout_width="220dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:backgroundTint="#9C27B0"
-            android:text="Pertemuan 7" />
+                <!-- Row 1 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnToSecond"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    android:backgroundTint="#EFD024"
+                    android:text="Pertemuan 2"
+                    app:cornerRadius="16dp" />
 
-        <Button
-            android:id="@+id/btnToTenth"
-            android:layout_width="220dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:backgroundTint="#3F51B5"
-            android:text="Pertemuan 10" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnToThird"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    android:backgroundTint="#EB70A0"
+                    android:text="Pertemuan 3"
+                    app:cornerRadius="16dp" />
 
-        <Button
-            android:id="@+id/btnToEleventh"
-            android:layout_width="220dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:backgroundTint="#673AB7"
-            android:text="Pertemuan 11"
-            android:textColor="#FFFFFF" />
+                <!-- Row 2 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnToFourth"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    android:backgroundTint="#E63A55"
+                    android:text="Pertemuan 4"
+                    app:cornerRadius="16dp" />
 
-    </LinearLayout>
-</ScrollView>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnToFifth"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    android:backgroundTint="#3182CE"
+                    android:text="Pertemuan 5"
+                    app:cornerRadius="16dp" />
+
+                <!-- Row 3 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnToSixth"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    android:backgroundTint="#2F855A"
+                    android:text="Pertemuan 6"
+                    app:cornerRadius="16dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnToSeventh"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    android:backgroundTint="#38A169"
+                    android:text="Pertemuan 7"
+                    app:cornerRadius="16dp" />
+
+                <!-- Row 4 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnToTenth"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    android:backgroundTint="#D07A2F"
+                    android:text="Pertemuan 10"
+                    app:cornerRadius="16dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnToEleventh"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    android:backgroundTint="#A2A2BA00"
+                    android:text="Pertemuan 11"
+                    app:cornerRadius="16dp" />
+
+                <!-- Row 5 -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnToTwelfth"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_columnSpan="2"
+                    android:layout_columnWeight="2"
+                    android:layout_margin="6dp"
+                    android:backgroundTint="#EE788B"
+                    android:text="Pertemuan 12 (API CatFact &amp; Gallery)"
+                    app:cornerRadius="16dp" />
+
+            </GridLayout>
+
+            <!-- Quote Container (CatFact API Refresh) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="24dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <ProgressBar
+                    android:id="@+id/progressBarHomeQuote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tvQuote"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:lineSpacingExtra="4dp"
+                    android:textColor="#2D3748"
+                    android:textSize="14sp"
+                    tools:text="&quot;Cats often overreact to unexpected stimuli because of their extremely sensitive nervous system.&quot;" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRefreshQuote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="#EE788B"
+                    android:paddingHorizontal="24dp"
+                    android:text="Refresh"
+                    app:cornerRadius="24dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -89,6 +89,12 @@
             android:name=".message.tutorial.TutorialMessageActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <!-- Pertemuan 12 Activity -->
+        <activity
+            android:name=".pertemuan_12.TwelfthActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
